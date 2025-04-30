@@ -1,0 +1,15 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  title: MyString
+  description: MyText
+  mp3_url: MyString
+  user: one
+  stream_count: 1
+
+two:
+  title: MyString
+  description: MyText
+  mp3_url: MyString
+  user: two
+  stream_count: 1

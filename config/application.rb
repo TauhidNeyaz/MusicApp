@@ -1,5 +1,4 @@
 require_relative "boot"
-
 require "rails/all"
 
 # Require the gems listed in Gemfile, including any gems
@@ -8,6 +7,11 @@ Bundler.require(*Rails.groups)
 
 module MusicApp
   class Application < Rails::Application
+
+    config.paths.add "app/api", eager_load: true
+    config.autoload_paths += %W(#{config.root}/app/api)
+    # ...existing code...
+
     # Initialize configuration defaults for originally generated Rails version.
     config.load_defaults 8.0
 
