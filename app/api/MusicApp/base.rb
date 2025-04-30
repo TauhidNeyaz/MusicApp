@@ -6,5 +6,7 @@ module MusicApp
         mount MusicApp::V1::SubscriptionRoute
         mount MusicApp::V1::PlayMusic
         mount MusicApp::V1::HistoryRoute
+        mount MusicApp::V1::MostPlayedMusicRoute
+        mount MusicApp::V1::SearchMusicRoute
     end
 end
