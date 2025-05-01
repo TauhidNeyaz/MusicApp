@@ -37,6 +37,30 @@ Rails.application.configure do
   # Make template changes take effect immediately.
   config.action_mailer.perform_caching = false
 
+
+   # Set up the default mailer settings for development
+   config.action_mailer.delivery_method = :smtp
+   config.action_mailer.smtp_settings = {
+     address: 'smtp.mailtrap.io',
+     port: 587,
+     user_name: 'your_mailtrap_username', # Replace with your Mailtrap username
+     password: 'your_mailtrap_password',  # Replace with your Mailtrap password
+     authentication: 'plain',
+     enable_starttls_auto: true
+   }
+
+   config.active_job.queue_adapter = :sidekiq
+
+ 
+   # Add this to specify the default URL for mailers
+   config.action_mailer.default_url_options = { host: 'localhost', port: 3000 }
+ 
+   # Don't care if the mailer can't send in development
+   config.action_mailer.raise_delivery_errors = true
+ 
+   # For debugging, set this to true to get more information
+   config.action_mailer.perform_deliveries = true
+
   # Set localhost to be used by links generated in mailer templates.
   config.action_mailer.default_url_options = { host: "localhost", port: 3000 }
 

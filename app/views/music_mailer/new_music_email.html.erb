@@ -1,0 +1,8 @@
+<h1>🎵 New Music Uploaded!</h1>
+<p><strong><%= @music.user.name %></strong> just uploaded a new track:</p>
+
+<ul>
+  <li>Title: <%= @music.title %></li>
+  <li>Description: <%= @music.description %></li>
+  <li>Listen: <a href="<%= @music.mp3_url %>">Click here</a></li>
+</ul>

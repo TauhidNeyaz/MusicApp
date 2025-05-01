@@ -31,7 +31,9 @@ module MusicApp
           )
 
           if music.save
-            { message: 'Music uploaded successfully', music: music }
+            NotifySubscribersJob.perform_later(music.id)
+            { message: 'Music uploaded successfully and subscribers will be notified', music: music }
+
           else
             error!({ error: music.errors.full_messages }, 422)
           end
