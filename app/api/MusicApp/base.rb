@@ -8,5 +8,6 @@ module MusicApp
         mount MusicApp::V1::HistoryRoute
         mount MusicApp::V1::MostPlayedMusicRoute
         mount MusicApp::V1::SearchMusicRoute
+        mount MusicApp::V1::InfoRoute
     end
 end

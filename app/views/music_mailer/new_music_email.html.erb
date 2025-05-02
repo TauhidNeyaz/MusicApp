@@ -1,8 +1,8 @@
-<h1>🎵 New Music Uploaded!</h1>
-<p><strong><%= @music.user.name %></strong> just uploaded a new track:</p>
+<h1>🎶 New Music Release Alert!</h1>
+<p><strong><%= @music.user.name %></strong> has just released a brand-new track for you to enjoy:</p>
 
-<ul>
-  <li>Title: <%= @music.title %></li>
-  <li>Description: <%= @music.description %></li>
-  <li>Listen: <a href="<%= @music.mp3_url %>">Click here</a></li>
+<ul style="list-style-type: none; padding-left: 0;">
+  <li><strong>🎧 Title:</strong> <%= @music.title %></li>
+  <li><strong>📝 Description:</strong> <%= @music.description %></li>
+  <li><strong>▶️ Listen Now:</strong> <a href="<%= @music.mp3_url %>" target="_blank" rel="noopener noreferrer">Click here to stream</a></li>
 </ul>
