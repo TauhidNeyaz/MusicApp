@@ -32,7 +32,7 @@ Rails.application.configure do
   config.active_storage.service = :local
 
   # Don't care if the mailer can't send.
-  config.action_mailer.raise_delivery_errors = false
+  config.action_mailer.raise_delivery_errors = true
 
   # Make template changes take effect immediately.
   config.action_mailer.perform_caching = false
@@ -41,10 +41,10 @@ Rails.application.configure do
    # Set up the default mailer settings for development
    config.action_mailer.delivery_method = :smtp
    config.action_mailer.smtp_settings = {
-     address: 'smtp.mailtrap.io',
+     address: 'smtp.gmail.com',
      port: 587,
-     user_name: 'your_mailtrap_username', # Replace with your Mailtrap username
-     password: 'your_mailtrap_password',  # Replace with your Mailtrap password
+     user_name: Rails.application.credentials.gmail[:user_name],
+     password: Rails.application.credentials.gmail[:app_password],
      authentication: 'plain',
      enable_starttls_auto: true
    }
@@ -60,9 +60,6 @@ Rails.application.configure do
  
    # For debugging, set this to true to get more information
    config.action_mailer.perform_deliveries = true
-
-  # Set localhost to be used by links generated in mailer templates.
-  config.action_mailer.default_url_options = { host: "localhost", port: 3000 }
 
   # Print deprecation notices to the Rails logger.
   config.active_support.deprecation = :log
